@@ -181,7 +181,7 @@ public class AddDele_copy2 extends JFrame implements ActionListener{
 			// 建構新的數據類模型，並更新
 			sm = new StuModel2();
 			String[] paras2 = {"1"};
-			sm.queryStu("select * from where 1=?", paras2);
+			sm.queryStu("select * from production.brands where 1=?", paras2);
 			// 更新JTable
 			table.setModel(sm);
 			
@@ -195,7 +195,7 @@ public class AddDele_copy2 extends JFrame implements ActionListener{
 			// 建構新的數據類模型，並更新
 			sm = new StuModel2();
 			String[] paras2 = {"1"};
-			sm.queryStu("select * from db_rider where 1=?", paras2);
+			sm.queryStu("select * from production.brands where 1=?", paras2);
 			// 更新JTable
 			table.setModel(sm);
 			
@@ -212,7 +212,7 @@ public class AddDele_copy2 extends JFrame implements ActionListener{
 			String stuId = (String) sm.getValueAt(rowNum, 0);
 			//System.out.println("id= "+stuId);
 			// 創建一個sql
-			String sql = "delete from db_rider where product.brands=?";
+			String sql = "delete from production.brands where brand_id=?";
 			// 這邊一定要強轉string stuId進入String[]我們class吃的格式
 			String[] paras = {stuId};
 			StuModel2 temp = new StuModel2();
@@ -244,7 +244,7 @@ public class AddDele_copy2 extends JFrame implements ActionListener{
 			// 最後，更新到數據模型
 			sm = new StuModel2();
 			String[] paras2 = {"1"};
-			sm.queryStu("select * from db_rider where 1=?", paras2);
+			sm.queryStu("select * from production.brands where 1=?", paras2);
 			// 更新JTable
 			table.setModel(sm);
 		}
